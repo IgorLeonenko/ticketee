@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: :show
 
-  def index; end
+  def index
+    @projects = Project.all
+  end
 
   def new
     @project = Project.new
