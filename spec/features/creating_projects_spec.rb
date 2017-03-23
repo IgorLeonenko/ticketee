@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.feature "users can create new project" do
   before do
     visit "/"
-    click_link "New project"
+    click_link "New Project"
   end
 
   scenario "with valid attributes" do
