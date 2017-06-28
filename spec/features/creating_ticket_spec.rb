@@ -15,6 +15,9 @@ RSpec.feature "Users can create new tickets" do
     fill_in :ticket_description, with: "My pages are ugly!"
     click_button "Create Ticket"
     expect(page).to have_content "Ticket has been created."
+    within("#ticket") do
+      expect(page).to have_content "Author: #{user.email}"
+    end
   end
 
   scenario "when providing invalid attributes" do
